@@ -24,11 +24,13 @@
 }
 
 .flex-5 {
-  display: flex;
   flex: 5;
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #0f7bc2;
   transition: 0.3s ease-in-out;
   padding: 0.5rem 1rem;

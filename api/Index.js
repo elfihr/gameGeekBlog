@@ -1,22 +1,20 @@
 import express from 'express'
 import cors from 'cors'
-import mysql from 'mysql2'
+import postRouter from './routes/post.js'
+import authRouter from './routes/auth.js'
+import usersRouter from './routes/users.js'
+import cookieParser from 'cookie-parser'
 
 const app = express()
-const db = mysql.createConnection({
-    host:"localhost",
-    user:"admin",
-    password:"admin",
-    database:"gameblog"
-})
-
-
 //middleware
+app.use(express.json())
 app.use(cors())
+app.use(cookieParser())
 
-
-
-
+//routes
+app.use("/api/posts",postRouter)
+app.use("/api/auth",authRouter)
+app.use("/api/user",usersRouter)
 
 
 app.listen(4150,() => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { menuLinks } from '../helper/helper'
 import { Link } from 'react-router-dom'
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
@@ -8,8 +8,11 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange } from '@mui/material/colors';
 import { Button } from '@mui/material';
+import { AuthContext } from '../context/authContext';
 
 const Navbar = () => {
+    const { currentUser } = useContext(AuthContext)
+
     return (
         <nav className='py-[1.5rem] px-[5%] bg-main flex justify-between items-center'>
             <div className='flex gap-2'>
@@ -32,9 +35,7 @@ const Navbar = () => {
                 <Button variant='contained'>
                     <Link to="/write">Write</Link>
                 </Button>
-                <Stack direction="row" spacing={2}>
-                    <Avatar sx={{ bgcolor: deepOrange[500] }}>F</Avatar>
-                </Stack>
+                <span>{currentUser?.user}</span>
             </div>
         </nav>
     )
