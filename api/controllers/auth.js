@@ -42,11 +42,12 @@ export const login = (req, res) => {
     if(!isPasswordCorrect) return res.status(400).json("Usuario ou senha incorreta!")
 
     const token = jwt.sign({id: data[0].id}, "jwtkey")
-    const {password,...other} = data[0] 
+
+    const {password,...other} = data[0] //separa senha de outra info
 
     res.cookie("access_token", token,{
       httpOnly:true
-    }).status(200).json(data[other])//separa senha de outra info
+    }).status(200).json(other)//separa senha de outra info
   })
 }
 

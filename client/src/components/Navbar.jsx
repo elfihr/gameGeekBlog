@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import { red } from '@mui/material/colors';
 
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
+
 import { deepOrange } from '@mui/material/colors';
 import { Button } from '@mui/material';
 import { AuthContext } from '../context/authContext';
@@ -14,7 +13,7 @@ const Navbar = () => {
     const { currentUser } = useContext(AuthContext)
 
     return (
-        <nav className='py-[1.5rem] px-[5%] bg-main flex justify-between items-center'>
+        <nav className='py-[1.5rem] px-[5%] bg-main flex justify-between items-center position-fixed'>
             <div className='flex gap-2'>
                 <VideogameAssetIcon sx={{ color: red[50] }} fontSize="large" />
                 <h3 className='text-h4 text-main font-bold'>Logo</h3>
