@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 import { AuthContext } from '../context/authContext';
 
 const Navbar = () => {
-    const { currentUser,logout } = useContext(AuthContext)
+    const { currentUser, logout } = useContext(AuthContext)
 
     return (
         <nav className='py-[1.5rem] px-[5%] bg-main flex justify-between items-center'>
@@ -27,12 +27,20 @@ const Navbar = () => {
                     )
                 })}
 
-                {currentUser ? (<Link className='text-main cursor-pointer hover:text-hover' onClick={logout} to="/">Logout</Link>) : 
-                (<Link className='text-main' to="/login">Login</Link>)}
-                <Button variant='contained'>
-                    <Link to="/write">Write</Link>
-                </Button>
-                <span className={currentUser ? "flex items-center justify-center text-main bg-sky-500 p-[1.2rem] w-8 h-8 rounded-full font-semibold" : ""}>{(currentUser?.user.substring(0,2))}</span>
+                {currentUser ? (
+                    <div className='flex gap-2 items-center'>
+                        <Link className='text-main cursor-pointer hover:text-hover font-semibold' onClick={logout} to="/">Logout</Link>
+                        <Button variant='contained'>
+                            <Link to="/write">Write</Link>
+                        </Button>
+                    </div>
+
+                ) :
+                    (<Button variant="contained">
+                        <Link to="/login">Login</Link>
+                    </Button>)}
+
+                <span className={currentUser ? "flex items-center justify-center text-main bg-sky-500 p-[1.2rem] w-8 h-8 rounded-full font-semibold" : ""}>{(currentUser?.user.substring(0, 2))}</span>
             </div>
         </nav>
     )

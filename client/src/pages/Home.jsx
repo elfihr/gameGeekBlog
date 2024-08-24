@@ -4,6 +4,7 @@ import home from '../assets/home.png'
 import { Link, useLocation } from 'react-router-dom'
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import axios from 'axios'
+import { Button } from '@mui/material';
 
 const Home = () => {
   //getPosts from db
@@ -51,8 +52,12 @@ const Home = () => {
                   <div className='flex-col flex-2 gap-6 items-center'>
                     <Link to={`/post/${post.id}`}><h1 className='text-h4 hover:text-slate-600 font-semibold'>{post.title}</h1></Link>
 
-                    <p>{post.desc}</p>
-                    <button className='btn w-40'>Leia Mais</button>
+                    <p>{post.desc.substring(0, 250) + "..."}</p>
+                    <Button variant="contained">
+                      <Link to={`/post/${post.id}`}>
+                        Leia Mais
+                      </Link>
+                    </Button>
                   </div>
                 </div>
                 <div className='w-[89%] border-b-4 rounded-lg m-8 border-slate-800'></div>
