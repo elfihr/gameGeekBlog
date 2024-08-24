@@ -1,4 +1,4 @@
-#### The Project
+### The Project
 
 This is a react vite project using mysql. You can read, post,edit and delete post. Just own user can delete and edit. Not logged user can't see the write buttons. 
 
