@@ -4,7 +4,7 @@ This is a react vite project using mysql. You can read, post,edit and delete pos
 
 i use proxy from the tailwind.config  to not repeat end-point in every axios comands.
 
-### Librarys
+# Librarys
 
 ## API
 
