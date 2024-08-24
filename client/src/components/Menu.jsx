@@ -32,7 +32,7 @@ const Menu = ({cat}) => {
             {posts.map(post => {
                 return (
                     <div key={post.id}>
-                        <img className='w-full h-40 object-cover' src={post.img} alt={post.title} />
+                        <img className='w-full h-40 object-cover' src={`../../public/upload/${post.img}`} alt={post.title} />
                         <p className='font-semibold text-p'>{post.title}</p>
                         <button className='btn'>Leia Mais</button>
                     </div>

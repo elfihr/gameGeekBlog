@@ -25,6 +25,12 @@ const Home = () => {
     fetchData();
   }, [cat]);
 
+  //for bugs in react-quill
+  const getText = (html) => {
+    const doc = new DOMParser().parseFromString(html,"text/html")
+    return doc.body.textContent
+  }
+
   return (
     <section style={{ backgroundImage: `url(${home})` }}
       className='min-h-[80vh] bg-center bg-cover bg-fixed max-lg:bg-scroll'>
@@ -47,12 +53,12 @@ const Home = () => {
               <div key={post.id}>
                 <div className='flex gap-6 items-center max-md:flex-col'>
                   <div className='flex-1'>
-                    <img className='w-[20rem] h-[12rem] rounded-md shadow-2xl' src={post.img} />
+                    <img className='w-[20rem] h-[12rem] rounded-md shadow-2xl' src={`../../public/upload/${post.img}`} />
                   </div>
                   <div className='flex-col flex-2 gap-6 items-center'>
                     <Link to={`/post/${post.id}`}><h1 className='text-h4 hover:text-slate-600 font-semibold'>{post.title}</h1></Link>
-
-                    <p>{post.desc.substring(0, 250) + "..."}</p>
+                  
+                    <p>{getText(post.desc.substring(0, 250) + "...")}</p>
                     <Button variant="contained">
                       <Link to={`/post/${post.id}`}>
                         Leia Mais
