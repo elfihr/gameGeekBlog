@@ -9,6 +9,7 @@ i use proxy from the tailwind.config  to not repeat end-point in every axios com
 ## API
 
 bcrypt =  to hash the password
+
 cookie-parser =  to create a cookie and mainten the user logged
 cors = end to end
 mysql2 = database
