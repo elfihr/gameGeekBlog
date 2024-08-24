@@ -25,9 +25,14 @@ muiMaterial = for buttons and icons
 reactquill = for post description
 
 #### Img from the project
-HOME PAGE (login)
+HOME PAGE (without login)
 ![geekBlog01](https://github.com/user-attachments/assets/414156af-13f4-4d84-879a-090f808315a8)
 
-Post session
+
+Post Session (with login)
+![image](https://github.com/user-attachments/assets/4a0fff3d-1716-46d5-a1ec-a16299d4eedf)
+
+
+Post session(without login)
 ![image](https://github.com/user-attachments/assets/4562e8c2-49ef-4411-bb90-1025fcc5d536)
 
