@@ -5,9 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 //pages
 import Home from '../src/pages/Home'
-import Nintendo from '../src/pages/Nintendo'
-import Sony from '../src/pages/Sony'
-import Microsoft from '../src/pages/Microsoft'
+
 //login
 import Write from './pages/Write'
 import Single from './pages/Single'
@@ -23,9 +21,6 @@ function App() {
         <Navbar/>
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='nintendo' element={<Nintendo/>}/>
-          <Route exact path='sony' element={<Sony/>}/>
-          <Route exact path='microsoft' element={<Microsoft/>}/>
 
           <Route exact path='/register' element={<Register/>}/>
           <Route exact path='/login' element={<Login/>}/>

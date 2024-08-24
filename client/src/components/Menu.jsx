@@ -1,8 +1,21 @@
-import React from 'react'
-import { posts } from '../helper/helper'
+import React, { useEffect, useState } from 'react'
 import FeedIcon from '@mui/icons-material/Feed';
+import axios from 'axios';
 
-const Menu = () => {
+const Menu = ({cat}) => {
+    const [posts, setPosts] = useState([]);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const res = await axios.get(`/api/posts/?cat=${cat}`);
+          setPosts(res.data);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      fetchData();
+    }, [cat]);
     return (
         <section className='flex-2 flex-col gap-10'>
 

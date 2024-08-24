@@ -52,3 +52,7 @@
 .bord{
   border-bottom: 1px solid black;
 }
+
+.sizebtn{
+  font-size:0.8rem;
+}

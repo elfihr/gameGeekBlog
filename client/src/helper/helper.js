@@ -4,18 +4,18 @@ export const menuLinks = [
         href:'/'
     },{
         name:'Nintendo',
-        href:'/nintendo'
+        href:'/?cat=nintendo'
     },
     {
         name:'Sony',
-        href:'/sony'
+        href:'/?cat=sony'
     },
     {
         name:'Microsoft',
-        href:'/microsoft'
+        href:'/?cat=microsoft'
     }
 ] 
-
+//apenas teste
 export const posts = [
     {
       id: 1,

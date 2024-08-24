@@ -4,6 +4,7 @@ import postRouter from './routes/post.js'
 import authRouter from './routes/auth.js'
 import usersRouter from './routes/users.js'
 import cookieParser from 'cookie-parser'
+import multer from 'multer'
 
 const app = express()
 //middleware
@@ -16,6 +17,11 @@ app.use("/api/posts",postRouter)
 app.use("/api/auth",authRouter)
 app.use("/api/user",usersRouter)
 
+//===upload img
+const upload = multer({ dest: 'uploads/' })
+app.post('/upload', upload.single('file'), function (req, res) {
+    res.status(200).json("upload realizado com sucesso!")
+  })
 
 app.listen(4150,() => {
     console.log("Server Online")
