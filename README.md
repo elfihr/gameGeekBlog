@@ -1,4 +1,4 @@
-### The Project
+# The Project
 
 This is a react vite project using mysql. You can read, post,edit and delete post. Just own user can delete and edit. Not logged user can't see the write buttons. 
 
@@ -35,7 +35,7 @@ muiMaterial = for buttons and icons
 
 reactquill = for post description
 
-#### Img from the project
+## Img from the project
 HOME PAGE (without login)
 ![geekBlog01](https://github.com/user-attachments/assets/414156af-13f4-4d84-879a-090f808315a8)
 
